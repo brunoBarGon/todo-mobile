@@ -8,7 +8,9 @@ const App = createStackNavigator();
 
 const AppRoutes = () => {
   return (
-    <App.Navigator>
+    <App.Navigator screenOptions={{
+      headerShown: false
+    }}>
       <App.Screen name="Dashboard" component={Dashboard} />
       <App.Screen name="Tarefas" component={Tarefas} />
     </App.Navigator>

@@ -1,16 +1,11 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { Text } from 'react-native';
 // import { FiCircle, FiCheckCircle, FiDelete } from 'react-icons/fi';
-// import api from '../../services/api';
+import api from '../../services/api';
 
 import logoImg from '../../assets/logo.png';
 
 // import { 
-//   Title, 
-//   Form, 
-//   Tasks, 
-//   ErrorMessage, 
-//   Header 
 // } from './styles';
 
 const Tarefas = () => {
@@ -20,8 +15,8 @@ const Tarefas = () => {
 
   const loadTasks = useCallback(
     async () => {
-      // const response = await api.get(`tarefas`);
-      // setTasks(response.data);
+      const response = await api.get(`tarefas`);
+      setTasks(response.data);
     },[],
   );
 
@@ -46,7 +41,7 @@ const Tarefas = () => {
       };
 
       try {
-        // await api.post(`tarefas`, params);  
+        await api.post(`tarefas`, params);  
         
         loadTasks();
         setNewTask("");
@@ -65,7 +60,7 @@ const Tarefas = () => {
         concluido: !task.concluido
       }
   
-      // await api.put(`tarefas/${task.id}`, params);
+      await api.put(`tarefas/${task.id}`, params);
   
       loadTasks();
     },[loadTasks],
@@ -73,7 +68,7 @@ const Tarefas = () => {
 
   const removeTask = useCallback(
     async (task) => {
-      // await api.delete(`tarefas/${task.id}`);
+      await api.delete(`tarefas/${task.id}`);
 
       loadTasks();
     },[loadTasks],

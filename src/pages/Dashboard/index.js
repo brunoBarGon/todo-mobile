@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useMemo, useCallback } from 'react';
 import { Text } from 'react-native';
-// import api from '../../services/api';
+import api from '../../services/api';
 
 // import { Title, Resumo } from './styles';
 
@@ -22,8 +22,8 @@ const Dashboard = () => {
 
   const loadTasks = useCallback(
     async () => {
-      // const response = await api.get(`tarefas`);
-      // setTasks(response.data);
+      const response = await api.get(`tarefas`);
+      setTasks(response.data);
     },[],
   );
 
