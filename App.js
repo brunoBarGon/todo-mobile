@@ -1,14 +1,18 @@
-import { StatusBar } from 'expo-status-bar';
+import 'react-native-gesture-handler';
 import React from 'react';
+import { StatusBar } from 'expo-status-bar';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
+import { NavigationContainer } from '@react-navigation/native';
 
-import Login from './src/pages/Login';
+import Routes from './src/routes';
 
 export default function App() {
   return (
     <SafeAreaProvider style={{paddingTop: 24}}>
       <StatusBar style="dark" backgroundColor="#F0F0F5" />
-      <Login />
+      <NavigationContainer>
+        <Routes />
+      </NavigationContainer>
     </SafeAreaProvider>
   );
 }
