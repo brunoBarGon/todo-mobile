@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import {Text, Image} from 'react-native';
+import {Image, ActivityIndicator} from 'react-native';
 // import { useAuth } from '../../hooks/auth';
 
 import logoImg from '../../assets/logo.png';
@@ -53,7 +53,11 @@ const Login = () => {
       />
 
       <Button onPress={() => handleSubmit()} >
-        <ButtonText>{loading ? 'Carregando' : 'Acessar'}</ButtonText>
+        { loading ? (
+          <ActivityIndicator color="#fff" />
+        ):(
+          <ButtonText>Acessar</ButtonText>
+        )}
       </Button>
 
     </Container>
