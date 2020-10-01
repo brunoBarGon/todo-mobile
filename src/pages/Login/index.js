@@ -4,7 +4,7 @@ import {Text, Image} from 'react-native';
 
 import logoImg from '../../assets/logo.png';
 
-import { Container, Input } from './styles';
+import { Container, Input, Button, ButtonText } from './styles';
 
 const Login = () => {
   // const { signIn } = useAuth();
@@ -51,6 +51,10 @@ const Login = () => {
         onChangeText={text => setPassword(text)}
         placeholder="Senha"
       />
+
+      <Button onPress={() => handleSubmit()} >
+        <ButtonText>{loading ? 'Carregando' : 'Acessar'}</ButtonText>
+      </Button>
 
     </Container>
   )
