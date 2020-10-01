@@ -1,13 +1,13 @@
 import React, {useState} from 'react'
 import {Image, ActivityIndicator} from 'react-native';
-// import { useAuth } from '../../hooks/auth';
+import { useAuth } from '../../hooks/auth';
 
 import logoImg from '../../assets/logo.png';
 
 import { Container, Input, Button, ButtonText } from './styles';
 
 const Login = () => {
-  // const { signIn } = useAuth();
+  const { signIn } = useAuth();
 
   const [loading, setLoading] = useState(false);
   const [email, setEmail] = useState("");
@@ -22,10 +22,10 @@ const Login = () => {
     console.log("submit", email, password);
 
     try {
-      // await signIn({
-      //   email: email,
-      //   password: password,
-      // });
+      await signIn({
+        email: email,
+        password: password,
+      });
 
     } catch (error) {
       console.log(error);
