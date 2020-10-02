@@ -1,7 +1,5 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
-import { Text } from 'react-native';
-// import { FiCircle, FiCheckCircle, FiDelete } from 'react-icons/fi';
 import api from '../../services/api';
 
 import { 
@@ -14,7 +12,8 @@ import {
   Tasks,
   Task,
   TaskText,
-  TaskAction
+  TaskAction,
+  ErroMessage
 } from './styles';
 
 const Tarefas = () => {
@@ -34,9 +33,7 @@ const Tarefas = () => {
   }, [loadTasks]);
 
   const handleAddTask = useCallback(
-    async (event) => {
-      event.preventDefault();
-
+    async () => {
       if(newTask === "") {
         setErrorMessage("Digite a tarefa a ser adicionada");
         return;
@@ -94,12 +91,16 @@ const Tarefas = () => {
           placeholder="Digite a nova tarefa..."
         />
 
-        <Button onPress={() => {}}>
+        <Button onPress={() => handleAddTask()}>
           <ButtonText>
               Criar
           </ButtonText>
         </Button>
       </FormAddNewTask>
+
+      { !!errorMessage && (
+        <ErroMessage>{errorMessage}</ErroMessage>
+      )}
 
       <Tasks>
         { tasks.map(task => (

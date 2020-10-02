@@ -1,6 +1,8 @@
 import React, { useEffect, useState, useMemo, useCallback } from 'react';
 import api from '../../services/api';
 
+import { useAuth } from '../../hooks/auth';
+
 import { 
   Title, 
   Resumo, 
@@ -12,6 +14,8 @@ import {
 } from './styles';
 
 const Dashboard = () => {
+  const { signOut } = useAuth();
+  
   const [tasks, setTasks] = useState([]);
 
   const tasks_qtd = useMemo(() => tasks.length, [tasks]);
@@ -59,7 +63,7 @@ const Dashboard = () => {
           <ResumoTextParagraphBold>Tarefas concluídas:</ResumoTextParagraphBold> {tasks_concluded_qtd}
         </ResumoTextParagraph>
 
-        <LogoutButton onPress={() => {}}>
+        <LogoutButton onPress={() => signOut()}>
             <LogoutButtonText>
               Sair
             </LogoutButtonText>

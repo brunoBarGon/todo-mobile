@@ -50,6 +50,7 @@ const Login = () => {
         value={password}
         onChangeText={text => setPassword(text)}
         placeholder="Senha"
+        secureTextEntry={true}
       />
 
       <Button onPress={() => handleSubmit()} >

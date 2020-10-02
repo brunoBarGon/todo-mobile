@@ -61,3 +61,9 @@ export const TaskText = styled.Text`
 export const TaskAction = styled.View`
   flex-direction: row;
 `;
+
+export const ErroMessage = styled.Text`
+  color: #c53030;
+  font-size: 14px;
+  margin-top: 5px;
+`;
