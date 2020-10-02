@@ -23,6 +23,7 @@ const Dashboard = () => {
   const loadTasks = useCallback(
     async () => {
       const response = await api.get(`tarefas`);
+      console.log("tarefas", response.data);
       setTasks(response.data);
     },[],
   );
