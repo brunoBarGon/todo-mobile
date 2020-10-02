@@ -3,10 +3,14 @@ import { Text } from 'react-native';
 // import { FiCircle, FiCheckCircle, FiDelete } from 'react-icons/fi';
 import api from '../../services/api';
 
-import logoImg from '../../assets/logo.png';
-
-// import { 
-// } from './styles';
+import { 
+  Container,
+  Title,
+  Input,
+  Button,
+  ButtonText,
+  FormAddNewTask
+} from './styles';
 
 const Tarefas = () => {
   const [tasks, setTasks] = useState([]);
@@ -75,9 +79,23 @@ const Tarefas = () => {
   );
 
   return (
-    <>
-      <Text>Tarefas</Text>
-    </>
+    <Container>
+      <Title>Lista de Tarefas</Title>
+
+      <FormAddNewTask>
+        <Input 
+          value={newTask}
+          onChangeText={text => setNewTask(text)}
+          placeholder="Digite a nova tarefa..."
+        />
+
+        <Button onPress={() => {}}>
+          <ButtonText>
+              Criar
+          </ButtonText>
+        </Button>
+      </FormAddNewTask>
+    </Container>
   )
 }
 

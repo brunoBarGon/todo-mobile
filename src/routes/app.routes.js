@@ -10,7 +10,7 @@ const App = createBottomTabNavigator();
 const AppRoutes = () => {
   return (
     <App.Navigator 
-      initialRouteName="Dashboard"
+      initialRouteName="Tarefas"
     >
       <App.Screen 
         name="Dashboard" 

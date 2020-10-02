@@ -1,8 +1,15 @@
 import React, { useEffect, useState, useMemo, useCallback } from 'react';
-import { Text } from 'react-native';
 import api from '../../services/api';
 
-// import { Title, Resumo } from './styles';
+import { 
+  Title, 
+  Resumo, 
+  ResumoText,
+  ResumoTextParagraph,
+  ResumoTextParagraphBold,
+  LogoutButton,
+  LogoutButtonText
+} from './styles';
 
 const Dashboard = () => {
   const [tasks, setTasks] = useState([]);
@@ -35,7 +42,30 @@ const Dashboard = () => {
 
   return (
     <>
-      <Text>Dashboard</Text>
+      <Title>Resumo</Title>
+
+      <Resumo>
+        { tasks_qtd - tasks_concluded_qtd === 0 ? (
+          <ResumoText>Parabéns! Você concluiu todas as tarefas!</ResumoText>
+        ) : (
+          <ResumoText>Existem {tasks_qtd - tasks_concluded_qtd} tarefas pendentes.</ResumoText>
+        )}
+
+        <ResumoTextParagraph>
+          <ResumoTextParagraphBold>Total de tarefas:</ResumoTextParagraphBold> {tasks_qtd}
+        </ResumoTextParagraph>
+
+        <ResumoTextParagraph>
+          <ResumoTextParagraphBold>Tarefas concluídas:</ResumoTextParagraphBold> {tasks_concluded_qtd}
+        </ResumoTextParagraph>
+
+        <LogoutButton onPress={() => {}}>
+            <LogoutButtonText>
+              Sair
+            </LogoutButtonText>
+        </LogoutButton>
+
+      </Resumo>
     </>
   )
 }
