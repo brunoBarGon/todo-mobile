@@ -114,13 +114,13 @@ const Tarefas = () => {
                     name="delete-outline"
                     color="#3a3a3a"
                     size={22}
-                    onPress={() => {}}
+                    onPress={() => removeTask(task)}
                   />
                   <MaterialCommunityIcons 
                     name="check-circle-outline"
                     color="#3a3a3a"
                     size={22}
-                    onPress={() => {}}
+                    onPress={() => handleTask(task)}
                   />
                 </>
               ) : (
@@ -128,7 +128,7 @@ const Tarefas = () => {
                   name="circle-outline"
                   color="#3a3a3a"
                   size={22}
-                  onPress={() => {}}
+                  onPress={() => handleTask(task)}
                 />
               )}
               
