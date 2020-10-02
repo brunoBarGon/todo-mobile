@@ -16,7 +16,7 @@ const AppRoutes = () => {
         name="Dashboard" 
         component={Dashboard} 
         options={{
-          tabBarIcon: ({ color }) => (
+          tabBarIcon: () => (
             <MaterialCommunityIcons name="view-dashboard" color="#000" size={30} />
           )
         }}
@@ -25,7 +25,7 @@ const AppRoutes = () => {
         name="Tarefas" 
         component={Tarefas} 
         options={{
-          tabBarIcon: ({ color }) => (
+          tabBarIcon: () => (
             <MaterialCommunityIcons name="playlist-edit" color="#000" size={30} />
           )
         }}
