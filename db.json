@@ -6,9 +6,9 @@
       "concluido": true
     },
     {
-      "descricao": "Aprender react native",
-      "id": 2,
-      "concluido": true
+      "descricao": "Novo",
+      "concluido": false,
+      "id": 2
     }
   ],
   "usuarios": [

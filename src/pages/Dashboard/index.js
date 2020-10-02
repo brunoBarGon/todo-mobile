@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useMemo, useCallback } from 'react';
+import { useIsFocused } from '@react-navigation/native';
 import api from '../../services/api';
-
 import { useAuth } from '../../hooks/auth';
 
 import { 
@@ -14,6 +14,7 @@ import {
 } from './styles';
 
 const Dashboard = () => {
+  const isFocused = useIsFocused();
   const { signOut } = useAuth();
   
   const [tasks, setTasks] = useState([]);
@@ -41,7 +42,7 @@ const Dashboard = () => {
 
   useEffect(() => {
     loadTasks();
-  }, [loadTasks]);
+  }, [loadTasks, isFocused]);
 
 
   return (
