@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useCallback } from 'react';
+import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { Text } from 'react-native';
 // import { FiCircle, FiCheckCircle, FiDelete } from 'react-icons/fi';
 import api from '../../services/api';
@@ -9,7 +10,11 @@ import {
   Input,
   Button,
   ButtonText,
-  FormAddNewTask
+  FormAddNewTask,
+  Tasks,
+  Task,
+  TaskText,
+  TaskAction
 } from './styles';
 
 const Tarefas = () => {
@@ -95,6 +100,42 @@ const Tarefas = () => {
           </ButtonText>
         </Button>
       </FormAddNewTask>
+
+      <Tasks>
+        { tasks.map(task => (
+          <Task key={task.id}>
+            <TaskText>{task.descricao}</TaskText>
+
+            <TaskAction>
+              { task.concluido ? (
+                <>
+                  <MaterialCommunityIcons 
+                    name="delete-outline"
+                    color="#3a3a3a"
+                    size={22}
+                    onPress={() => {}}
+                  />
+                  <MaterialCommunityIcons 
+                    name="check-circle-outline"
+                    color="#3a3a3a"
+                    size={22}
+                    onPress={() => {}}
+                  />
+                </>
+              ) : (
+                <MaterialCommunityIcons 
+                  name="circle-outline"
+                  color="#3a3a3a"
+                  size={22}
+                  onPress={() => {}}
+                />
+              )}
+              
+            </TaskAction>
+          </Task>
+        ))
+        }
+      </Tasks>
     </Container>
   )
 }

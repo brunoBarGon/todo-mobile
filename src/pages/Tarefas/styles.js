@@ -11,7 +11,7 @@ export const Title = styled.Text`
 `;
 
 export const Input = styled.TextInput`
-  width: 250px;
+  flex: 1;
   height: 40px;
   background-color: #fff;
   padding: 0 20px;
@@ -37,4 +37,27 @@ export const ButtonText = styled.Text`
 export const FormAddNewTask = styled.View`
   flex-direction: row;
   margin-top: 30px;
+`;
+
+export const Tasks = styled.View`
+  flex: 1;
+  margin-top: 40px;
+`;
+
+export const Task = styled.View`
+  background-color: #fff;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  padding: 10px 20px;
+  justify-content: space-between;
+  flex-direction: row;
+`;
+
+export const TaskText = styled.Text`
+  font-size: 16px;
+  color: #3a3a3a;
+`;
+
+export const TaskAction = styled.View`
+  flex-direction: row;
 `;
