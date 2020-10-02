@@ -6,3 +6,8 @@ const api = axios.create({
 });
 
 export default api; 
+
+// Para liberar porta
+// json-server --watch db.json --port 8080
+// Instalar ngrok
+// ./ngrok http 8080
