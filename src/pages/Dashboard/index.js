@@ -42,8 +42,7 @@ const Dashboard = () => {
 
   useEffect(() => {
     loadTasks();
-  }, [loadTasks, isFocused]);
-
+  }, [loadTasks, isFocused || false]);
 
   return (
     <>
